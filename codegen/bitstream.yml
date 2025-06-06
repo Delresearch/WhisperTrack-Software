@@ -1,0 +1,136 @@
+---
+LocalizationRequest:
+  - Type:
+      - size: 6
+        value: 0
+  - Device_ID:
+      - size: 24
+  - Date_time:
+      - size: 9
+  - Reserved_bits_13:
+      - size: 13
+  - CRC:
+      - size: 12
+
+LocalizationReport:
+  - Type:
+      - size: 6
+        value: 1
+  - Response_ID:
+      - size: 12
+  - Response_delay:
+      - size: 2
+  - Reserved_bits_5:
+      - size: 5
+  - Device_depth:
+      - size: 9
+  - Battery:
+      - size: 8
+  - Temperature:
+      - size: 10
+  - CRC:
+      - size: 12
+
+ReleaseRequest:
+  - Type:
+      - size: 6
+        value: 2
+  - Device_ID:
+      - size: 24
+  - Reserved_bits_22:
+      - size: 22
+  - CRC:
+      - size: 12
+
+ReleaseReport:
+  - Type:
+      - size: 6
+        value: 3
+  - Device_ID:
+      - size: 12
+  - Activation_status:
+      - size: 6
+  - Reserved_bits_28:
+      - size: 28
+  - CRC:
+      - size: 12
+
+LostDeviceRequest:
+  - Type:
+      - size: 6
+        value: 4
+  - Date_time:
+      - size: 9
+  - Reserved_bits_37:
+      - size: 37
+  - CRC:
+      - size: 12
+
+LostDeviceReport:
+  - Type:
+      - size: 6
+        value: 5
+  - Device_ID:
+      - size: 24
+  - Response_delay:
+      - size: 2
+  - Reserved_bits_3:
+      - size: 3
+  - Device_depth:
+      - size: 9
+  - Battery:
+      - size: 8
+  - CRC:
+      - size: 12
+
+StatusRequest:
+  - Type:
+      - size: 6
+        value: 6
+  - Device_ID:
+      - size: 24
+  - Reserved_bits_22:
+      - size: 22
+  - CRC:
+      - size: 12
+
+StatusReport:
+  - Type:
+      - size: 6
+        value: 7
+  - Response_ID:
+      - size: 12
+  - Reserved_bits_6:
+      - size: 6
+  - Release_Status:
+      - size: 6
+  - Battery:
+      - size: 8
+  - Orientation:
+      - size: 4
+  - Temperature:
+      - size: 10
+  - CRC:
+      - size: 12
+
+VendorRequest:
+  - Type:
+      - size: 6
+        value: 8
+  - Device_ID:
+      - size: 24
+  - Vendor_downlink_payload:
+      - size: 22
+  - CRC:
+      - size: 12
+
+VendorReport:
+  - Type:
+      - size: 6
+        value: 9
+  - Response_ID:
+      - size: 12
+  - Vendor_uplink_payload:
+      - size: 34
+  - CRC:
+      - size: 12

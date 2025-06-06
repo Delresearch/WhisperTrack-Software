@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug (SWD)",
+            "cwd": "${workspaceFolder}",
+            "executable": "./build_stm/nfwf_app.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            "device": "STM32L496VG",
+            "interface": "swd",  // Use SWD interface
+        }
+    ]
+}
