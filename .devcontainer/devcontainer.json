@@ -1,0 +1,20 @@
+{
+	"name": "WhisperTrack-Dev",
+	"build": {
+	  "dockerfile": "../docker/Dockerfile",
+	  "options": ["--platform=linux/amd64"]
+	},
+	"workspaceFolder": "/builds",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/builds,type=bind,consistency=cached",
+	"mounts": [
+	  "source=${localEnv:HOME}/.ssh,target=/home/runner/.ssh,type=bind,consistency=cached",
+	  "source=${localEnv:HOME}/.gitconfig,target=/home/runner/.gitconfig,type=bind,consistency=cached"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cmake-tools"
+			]
+		}
+	}
+  }
