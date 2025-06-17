@@ -1,0 +1,6 @@
+[submodule "fontusmodem"]
+	path = fontusmodem
+	url = https://gitlab.popotomodem.com/delresearch/fontusmodem.git
+[submodule "Middlewares/Third_Party/FreeRTOS"]
+	path = Middlewares/Third_Party/FreeRTOS
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel.git
