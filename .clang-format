@@ -1,0 +1,56 @@
+# .clang-format
+
+---
+BasedOnStyle:  LLVM            # Starting preset; can also try Google, Chromium, etc.
+IndentWidth:   4
+TabWidth:      4
+UseTab:        Never           # Enforce spaces, no tabs
+
+# Braces
+BreakBeforeBraces: Attach      # Attach braces to control statements/functions
+BraceWrapping:
+  AfterClass:      false
+  AfterControlStatement: false
+  AfterFunction:   false
+  AfterNamespace:  false
+  AfterStruct:     false
+  BeforeCatch:     false
+  SplitEmptyFunction: false
+  SplitEmptyRecord:   false
+  SplitEmptyNamespace: false
+
+# Keep short statements on multiple lines for clarity
+AllowShortIfStatementsOnASingleLine: false
+AllowShortBlocksOnASingleLine:       false
+AllowShortFunctionsOnASingleLine:    Empty
+
+# Pointer/reference alignment: "Left", "Right", or "Middle"
+PointerAlignment: Right
+
+# Include style
+SortIncludes: false   # Keep includes in the order they're written
+IncludeBlocks: Preserve
+
+# Spaces
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false
+SpaceBeforeCtorInitializerColon: false
+
+# Indentation for case labels in switch statements
+IndentCaseLabels: false
+
+# Template declarations each on a new line
+AlwaysBreakTemplateDeclarations: Yes
+
+# Maximum line length before wrapping
+ColumnLimit: 120
+
+# Align trailing comments if you like that look
+AlignTrailingComments: true
+
+# Prefer not to break function declarations/definitions too aggressively
+PenaltyBreakString:       1
+
+# If you want to keep or remove consecutive empty lines
+MaxEmptyLinesToKeep: 1
+...
