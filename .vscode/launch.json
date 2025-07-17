@@ -1,0 +1,78 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build_emu/emu/emu_nfwf_app",
+            "args": ["../fontusmodem/vectors/testvect.packed"],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Cortex Debug (Remote J-Link Dev Container)",
+            "cwd": "${workspaceFolder}",
+            "executable": "./build_stm/stm32/whispertrack.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "device": "STM32L496VG",
+            "interface": "swd",
+            "svdFile": "${workspaceFolder}/STM32L496.svd",
+            "gdbTarget": "host.docker.internal:50000",
+            "gdbPath": "/usr/bin/gdb-multiarch",
+            "postLaunchCommands": [
+                "monitor reset",
+                "continue"
+                ]
+        },
+        {
+            "name": "Cortex Debug (Remote J-Link ARM)",
+            "cwd": "${workspaceFolder}",
+            "executable": "./build_stm/stm32/whispertrack.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "external",
+            "device": "STM32L496VG",
+            "interface": "swd",
+            "svdFile": "${workspaceFolder}/STM32L496.svd",
+            "gdbTarget": "localhost:50000",
+            "gdbPath": "arm-none-eabi-gdb",
+            "postLaunchCommands": [
+                "monitor reset",
+                "continue"
+                ]
+        },
+        {
+            "name": "Cortex Debug (Local J-Link)",
+            "cwd": "${workspaceFolder}",
+            "executable": "./build_stm/stm32/whispertrack.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "jlink",
+            "device": "STM32L496VG",
+            "interface": "swd",
+            "svdFile": "${workspaceFolder}/STM32L496.svd",
+        }
+
+    ]
+}

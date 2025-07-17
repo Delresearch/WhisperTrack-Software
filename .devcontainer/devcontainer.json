@@ -1,0 +1,27 @@
+{
+	"name": "WhisperTrack-Dev",
+	"build": {
+	  "dockerfile": "../docker/Dockerfile",
+	  "args": {
+		"USERNAME": "vscode",
+		"UID": "1000",
+		"GID": "1000"
+	  }
+	},
+	"workspaceFolder": "/builds",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/builds,type=bind,consistency=cached",
+	"mounts": [
+	  "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+	  "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cmake-tools",
+				"marus25.cortex-debug",
+				"mcu-debug.debug-tracker-vscode"
+			]
+		}
+	},
+	"postCreateCommand": "lefthook install"
+  }

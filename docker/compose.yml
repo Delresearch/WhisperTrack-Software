@@ -1,0 +1,11 @@
+services:
+  whispertrack:
+    image: whispertrack:latest
+    container_name: whispertrack_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    tty: true
+    volumes:
+      - ../:/builds
